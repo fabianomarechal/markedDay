@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F8404641E6F3C27008312D1 /* AtividadesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8404631E6F3C27008312D1 /* AtividadesCollectionViewController.swift */; };
+		3F8404661E6F48C3008312D1 /* atividadeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8404651E6F48C3008312D1 /* atividadeCollectionViewCell.swift */; };
 		8FF80C101E6ED69B00D9249C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF80C0F1E6ED69B00D9249C /* AppDelegate.swift */; };
 		8FF80C121E6ED69B00D9249C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF80C111E6ED69B00D9249C /* ViewController.swift */; };
 		8FF80C151E6ED69B00D9249C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FF80C131E6ED69B00D9249C /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F8404631E6F3C27008312D1 /* AtividadesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtividadesCollectionViewController.swift; sourceTree = "<group>"; };
+		3F8404651E6F48C3008312D1 /* atividadeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = atividadeCollectionViewCell.swift; sourceTree = "<group>"; };
 		8FF80C0C1E6ED69B00D9249C /* MarkedDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarkedDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF80C0F1E6ED69B00D9249C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FF80C111E6ED69B00D9249C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 				8FF80C211E6ED6C100D9249C /* Supporting Files */,
 				8FF80C111E6ED69B00D9249C /* ViewController.swift */,
 				8FF80C131E6ED69B00D9249C /* Main.storyboard */,
+				3F8404651E6F48C3008312D1 /* atividadeCollectionViewCell.swift */,
+				3F8404631E6F3C27008312D1 /* AtividadesCollectionViewController.swift */,
 				8FF80C161E6ED69B00D9249C /* Assets.xcassets */,
 			);
 			path = MarkedDay;
@@ -145,6 +151,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FF80C121E6ED69B00D9249C /* ViewController.swift in Sources */,
+				3F8404641E6F3C27008312D1 /* AtividadesCollectionViewController.swift in Sources */,
+				3F8404661E6F48C3008312D1 /* atividadeCollectionViewCell.swift in Sources */,
 				8FF80C101E6ED69B00D9249C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +315,7 @@
 				8FF80C201E6ED69B00D9249C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
