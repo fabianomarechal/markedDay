@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import UserNotifications
 
 private let reuseIdentifier = "atividadeCell"
 
-class AtividadesCollectionViewController: UICollectionViewController {
+class AtividadesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let atividades = [
         (descricao: "estudar algebra", inicio: "20:00", termino: "21:00"),
@@ -19,8 +20,29 @@ class AtividadesCollectionViewController: UICollectionViewController {
         (descricao: "Algoritmo", inicio: "21:00", termino: "22:00")
     ]
     
+    // 2: Solicitar autorização para enviar notificações
+    func registerForNotifications() {
+        // Defina o tipo de notificações que você quer permitir
+        let notificationTypes: UNAuthorizationOptions = [.sound, .alert, .badge]
+        
+        // Utilizamos o notification center para solicitar autorização
+        let notificationCenter = UNUserNotificationCenter.current()
+        
+        // Solicitamos autorização
+        notificationCenter.requestAuthorization(options: notificationTypes) {
+            (granted, error) in
+            if granted {
+                print("Autorização concedida :D")
+            } else {
+                print("Autorização negada :(")
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        registerForNotifications()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -77,6 +99,7 @@ class AtividadesCollectionViewController: UICollectionViewController {
     
     }
     */
+    
 
 }
 
@@ -85,24 +108,66 @@ extension AtividadesCollectionViewController {
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return atividades.count
+        return 1
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 1
+        return atividades.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        let atividade = atividades[indexPath.section]
+        let atividade = atividades[indexPath.row]
         // Configure the cell
         if let atividadeCell = cell as? atividadeCollectionViewCell{
             atividadeCell.descricaoTextView.text = atividade.descricao
         }
      
-        print("\(atividades.count)")
         return cell
     }
+    
 }
+
+extension AtividadesCollectionViewController {
+    
+    // Lembre-se que em uma extension só podemos ter
+    // propriedades computadas!
+    
+    // Defina a distancia entre os itens na CollectionView
+    private var sectionInsets: UIEdgeInsets {
+        return UIEdgeInsets(
+            top: 10.0,
+            left: 10.0,
+            bottom: 20.0,
+            right: 10.0
+        )
+    }
+    
+    // Defina o número de células que terá por linha
+    private var itemsPerRow: CGFloat {
+        return 2
+    }
+    
+    // 1. Defina a altura e largura de cada célula
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
+        
+        return CGSize(width: widthPerItem, height: widthPerItem)
+    }
+    
+    // 2. Define as distâncias entre as células na CollectionView
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+    
+    // 3. Define o espaço entre linhas e colunas de células dentro de uma seção
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionInsets.left
+    }
+}
+
