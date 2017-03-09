@@ -10,6 +10,30 @@ import UIKit
 
 class formularioViewController: UIViewController {
 
+    @IBOutlet weak var tituloTextField: UITextField!
+    @IBOutlet weak var descricaoTextView: UITextView!
+    @IBOutlet weak var inicioDatePicker: UIDatePicker!
+    @IBOutlet weak var terminoDatePicker: UIDatePicker!
+    
+    var titulo: String {
+        get {
+            return tituloTextField.text!
+        }
+        
+        set {
+            tituloTextField.text = newValue
+        }
+    }
+    
+    var descricao: String {
+        get {
+            return descricaoTextView.text
+        }
+        set {
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
