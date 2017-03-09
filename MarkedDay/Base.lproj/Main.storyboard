@@ -32,7 +32,7 @@
         <scene sceneID="6JN-lu-NAT">
             <objects>
                 <collectionViewController id="6Pc-FI-XdC" customClass="AtividadesCollectionViewController" customModule="MarkedDay" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="CXS-cd-yDY">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="CXS-cd-yDY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -82,8 +82,17 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Atividades" id="pyg-E4-Zw1">
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="Wfq-bh-BQP"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="t6Y-bE-nnb">
+                            <connections>
+                                <segue destination="6DB-rR-xYz" kind="show" id="tQc-5Z-84i"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <value key="contentSizeForViewInPopover" type="size" width="200" height="200"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="AddButton" destination="t6Y-bE-nnb" id="PeI-Qy-tdl"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2tO-Jb-dx1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -183,14 +192,11 @@
                             </stackView>
                             <button opaque="NO" contentMode="bottom" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fy5-Yo-oSa">
                                 <rect key="frame" x="295" y="613" width="68" height="30"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="Btu-h5-Pxs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="OK">
-                                    <color key="titleColor" red="0.019536418650000002" green="0.029788766590000001" blue="0.036760416669999997" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <state key="normal" title="OK"/>
                                 <connections>
                                     <action selector="cadastraAtividade:" destination="6DB-rR-xYz" eventType="touchUpInside" id="fcb-Ht-OG7"/>
                                 </connections>
@@ -228,4 +234,7 @@
     <resources>
         <image name="stick1" width="200" height="200"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="TJp-iH-khV"/>
+    </inferredMetricsTieBreakers>
 </document>
