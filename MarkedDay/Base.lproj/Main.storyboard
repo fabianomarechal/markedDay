@@ -32,7 +32,7 @@
         <scene sceneID="6JN-lu-NAT">
             <objects>
                 <collectionViewController id="6Pc-FI-XdC" customClass="AtividadesCollectionViewController" customModule="MarkedDay" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="CXS-cd-yDY">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="CXS-cd-yDY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -79,15 +79,14 @@
                             <outlet property="delegate" destination="6Pc-FI-XdC" id="MSc-Zg-hcL"/>
                         </connections>
                     </collectionView>
-                    <toolbarItems>
-                        <barButtonItem systemItem="add" id="t6Y-bE-nnb">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Atividades" id="pyg-E4-Zw1">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="Wfq-bh-BQP"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="t6Y-bE-nnb">
                             <connections>
                                 <segue destination="6DB-rR-xYz" kind="show" id="tQc-5Z-84i"/>
                             </connections>
                         </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Atividades" id="pyg-E4-Zw1">
-                        <barButtonItem key="backBarButtonItem" title="Voltar" id="Wfq-bh-BQP"/>
                     </navigationItem>
                     <value key="contentSizeForViewInPopover" type="size" width="200" height="200"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
