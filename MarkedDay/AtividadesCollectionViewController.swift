@@ -13,6 +13,8 @@ private let reuseIdentifier = "atividadeCell"
 
 class AtividadesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var AddButton: UIBarButtonItem!
+    
     var atividade: Atividade?
     var atividades: [Atividade]? = AtividadeDAO.searchAll()
     
