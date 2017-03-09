@@ -20,6 +20,8 @@ class AtividadesCollectionViewController: UICollectionViewController, UICollecti
         (descricao: "Algoritmo", inicio: "21:00", termino: "22:00")
     ]
     
+    var novaAtividade: (descricao: String, inicio: Date, termino: Date)?
+    
     // 2: Solicitar autorização para enviar notificações
     func registerForNotifications() {
         // Defina o tipo de notificações que você quer permitir
@@ -51,6 +53,11 @@ class AtividadesCollectionViewController: UICollectionViewController, UICollecti
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+    }
+
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("Estou de Volta")
     }
 
     override func didReceiveMemoryWarning() {

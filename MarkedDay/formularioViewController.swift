@@ -17,6 +17,8 @@ class formularioViewController: UIViewController {
     
     @IBAction func cadastraAtividade(_ sender: UIButton) {
         print("titulo=\(titulo), descrição=\(descricao)")
+        
+        navigationController?.popViewController(animated: true)
     }
     
     var titulo: String {
@@ -60,6 +62,12 @@ class formularioViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    // Atualiza a view
+    override func viewWillAppear(_ animated: Bool) {
+        
     }
 
     override func didReceiveMemoryWarning() {

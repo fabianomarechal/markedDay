@@ -32,7 +32,7 @@
         <scene sceneID="6JN-lu-NAT">
             <objects>
                 <collectionViewController id="6Pc-FI-XdC" customClass="AtividadesCollectionViewController" customModule="MarkedDay" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="CXS-cd-yDY">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="CXS-cd-yDY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,7 +45,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="atividadeCell" id="5Lc-Zb-8r2" customClass="atividadeCollectionViewCell" customModule="MarkedDay" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="10" width="200" height="200"/>
+                                <rect key="frame" x="88" y="10" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -70,7 +70,7 @@
                                 <size key="customSize" width="200" height="200"/>
                                 <connections>
                                     <outlet property="descricaoTextView" destination="w3U-aH-Ubo" id="Jgx-WM-f9M"/>
-                                    <segue destination="6DB-rR-xYz" kind="show" id="TJp-iH-khV"/>
+                                    <segue destination="6DB-rR-xYz" kind="show" identifier="atividadesIdentifier" id="TJp-iH-khV"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -222,7 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Rh-nf-Fqz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="463.19999999999999" y="939.58020989505258"/>
+            <point key="canvasLocation" x="764" y="545"/>
         </scene>
     </scenes>
     <resources>
