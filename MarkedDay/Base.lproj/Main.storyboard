@@ -79,11 +79,21 @@
                             <outlet property="delegate" destination="6Pc-FI-XdC" id="MSc-Zg-hcL"/>
                         </connections>
                     </collectionView>
-                    <toolbarItems/>
+                    <toolbarItems>
+                        <barButtonItem systemItem="add" id="t6Y-bE-nnb">
+                            <connections>
+                                <segue destination="6DB-rR-xYz" kind="show" id="tQc-5Z-84i"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Atividades" id="pyg-E4-Zw1">
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="Wfq-bh-BQP"/>
                     </navigationItem>
                     <value key="contentSizeForViewInPopover" type="size" width="200" height="200"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="AddButton" destination="t6Y-bE-nnb" id="PeI-Qy-tdl"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2tO-Jb-dx1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,7 +111,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M6E-di-MSF" userLabel="tituloStackView">
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6E-di-MSF" userLabel="tituloStackView">
                                 <rect key="frame" x="26" y="72" width="323" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vb8-gR-hqD">
@@ -118,8 +128,8 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="I7B-iq-ufP" userLabel="descricaoStackView">
-                                <rect key="frame" x="16" y="110" width="333" height="230"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="I7B-iq-ufP" userLabel="descricaoStackView">
+                                <rect key="frame" x="16" y="110" width="333" height="229.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nnl-u7-S9o">
                                         <rect key="frame" x="0.0" y="0.0" width="81.5" height="20.5"/>
@@ -139,8 +149,8 @@
                                     <constraint firstAttribute="trailing" secondItem="glv-AT-j9n" secondAttribute="trailing" id="lM7-r5-mMZ"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f5q-fp-ZTP" userLabel="inicioStackView">
-                                <rect key="frame" x="16" y="290" width="365" height="217"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f5q-fp-ZTP" userLabel="inicioStackView">
+                                <rect key="frame" x="16" y="290" width="365" height="216.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inicio:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43W-pi-o9P">
                                         <rect key="frame" x="0.0" y="98" width="45" height="20.5"/>
@@ -160,8 +170,8 @@
                                     <constraint firstItem="43W-pi-o9P" firstAttribute="top" secondItem="f5q-fp-ZTP" secondAttribute="top" constant="98" id="We5-Je-mma"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uKG-2W-itr" userLabel="terminoStackView">
-                                <rect key="frame" x="0.0" y="388" width="387" height="217"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uKG-2W-itr" userLabel="terminoStackView">
+                                <rect key="frame" x="0.0" y="388.5" width="387" height="216.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Término:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2c-pp-wgz">
                                         <rect key="frame" x="0.0" y="98" width="67" height="20.5"/>
@@ -183,14 +193,11 @@
                             </stackView>
                             <button opaque="NO" contentMode="bottom" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fy5-Yo-oSa">
                                 <rect key="frame" x="295" y="613" width="68" height="30"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="Btu-h5-Pxs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="OK">
-                                    <color key="titleColor" red="0.019536418650000002" green="0.029788766590000001" blue="0.036760416669999997" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <state key="normal" title="OK"/>
                                 <connections>
                                     <action selector="cadastraAtividade:" destination="6DB-rR-xYz" eventType="touchUpInside" id="fcb-Ht-OG7"/>
                                 </connections>
@@ -228,4 +235,7 @@
     <resources>
         <image name="stick1" width="200" height="200"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="tQc-5Z-84i"/>
+    </inferredMetricsTieBreakers>
 </document>

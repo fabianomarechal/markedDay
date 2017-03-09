@@ -13,6 +13,8 @@ private let reuseIdentifier = "atividadeCell"
 
 class AtividadesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var AddButton: UIBarButtonItem!
+    
     let atividades = [
         (descricao: "estudar algebra", inicio: "20:00", termino: "21:00"),
         (descricao: "Matematica", inicio: "15:00", termino: "16:00"),
