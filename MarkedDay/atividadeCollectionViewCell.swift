@@ -21,5 +21,5 @@ class atividadeCollectionViewCell: UICollectionViewCell {
         }
     }
 
-    //atividade
+    //atividade besteira
 }
