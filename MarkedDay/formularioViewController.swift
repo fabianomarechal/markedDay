@@ -15,6 +15,10 @@ class formularioViewController: UIViewController {
     @IBOutlet weak var inicioDatePicker: UIDatePicker!
     @IBOutlet weak var terminoDatePicker: UIDatePicker!
     
+    @IBAction func cadastraAtividade(_ sender: UIButton) {
+        print("titulo=\(titulo), descrição=\(descricao)")
+    }
+    
     var titulo: String {
         get {
             return tituloTextField.text!
@@ -30,7 +34,25 @@ class formularioViewController: UIViewController {
             return descricaoTextView.text
         }
         set {
-            
+            descricaoTextView.text = newValue
+        }
+    }
+    
+    var inicio : Date {
+        get {
+            return inicioDatePicker.date
+        }
+        set {
+            inicioDatePicker.date = newValue
+        }
+    }
+    
+    var termino : Date {
+        get {
+            return terminoDatePicker.date
+        }
+        set {
+            terminoDatePicker.date = newValue
         }
     }
     
