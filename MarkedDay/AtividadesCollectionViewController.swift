@@ -38,7 +38,7 @@ class AtividadesCollectionViewController: UICollectionViewController, UICollecti
             }
         }
     }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,8 +55,11 @@ class AtividadesCollectionViewController: UICollectionViewController, UICollecti
 
     
     override func viewWillAppear(_ animated: Bool) {
+        atividades = AtividadeDAO.searchAll()
+        self.collectionView!.reloadData()
         print("Estou de Volta")
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

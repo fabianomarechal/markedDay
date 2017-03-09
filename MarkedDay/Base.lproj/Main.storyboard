@@ -56,10 +56,9 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                         </imageView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="w3U-aH-Ubo" userLabel="textView">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="w3U-aH-Ubo" userLabel="textView" customClass="atividadeTextView" customModule="MarkedDay" customModuleProvider="target">
                                             <rect key="frame" x="5" y="5" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
@@ -76,7 +75,7 @@
                         </cells>
                         <connections>
                             <outlet property="dataSource" destination="6Pc-FI-XdC" id="G6O-cb-CQt"/>
-                            <outlet property="delegate" destination="6Pc-FI-XdC" id="MSc-Zg-hcL"/>
+                            <outlet property="delegate" destination="6Pc-FI-XdC" id="hS5-hL-rup"/>
                         </connections>
                     </collectionView>
                     <toolbarItems/>
@@ -96,7 +95,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2tO-Jb-dx1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-265" y="945"/>
+            <point key="canvasLocation" x="-132" y="940"/>
         </scene>
         <!--Formulario View Controller-->
         <scene sceneID="fWm-x4-gVh">
@@ -111,16 +110,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6E-di-MSF" userLabel="tituloStackView">
-                                <rect key="frame" x="26" y="72" width="323" height="30"/>
+                                <rect key="frame" x="26" y="72" width="323" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vb8-gR-hqD">
-                                        <rect key="frame" x="0.0" y="0.0" width="48" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="48" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dBe-Sq-YC8" userLabel="tituloTextField">
-                                        <rect key="frame" x="48" y="0.0" width="275" height="30"/>
+                                        <rect key="frame" x="48" y="0.0" width="275" height="20.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -128,18 +127,17 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="I7B-iq-ufP" userLabel="descricaoStackView">
-                                <rect key="frame" x="16" y="110" width="333" height="229.5"/>
+                                <rect key="frame" x="16" y="100.5" width="333" height="209"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nnl-u7-S9o">
-                                        <rect key="frame" x="0.0" y="0.0" width="81.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="81.5" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="glv-AT-j9n" userLabel="descricaoTextView">
-                                        <rect key="frame" x="0.0" y="20.5" width="333" height="209"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="209"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -149,7 +147,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f5q-fp-ZTP" userLabel="inicioStackView">
-                                <rect key="frame" x="16" y="290" width="365" height="217"/>
+                                <rect key="frame" x="16" y="290" width="365" height="216.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inicio:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43W-pi-o9P">
                                         <rect key="frame" x="0.0" y="98" width="45" height="20.5"/>
@@ -170,16 +168,16 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uKG-2W-itr" userLabel="terminoStackView">
-                                <rect key="frame" x="0.0" y="388" width="387" height="217"/>
+                                <rect key="frame" x="0.0" y="358" width="387" height="203"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Término:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2c-pp-wgz">
-                                        <rect key="frame" x="0.0" y="98" width="67" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="98" width="67" height="7"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cx9-fR-6If" userLabel="terminoDatePicker">
-                                        <rect key="frame" x="67" y="0.0" width="320" height="216.5"/>
+                                        <rect key="frame" x="67" y="0.0" width="320" height="203"/>
                                         <date key="date" timeIntervalSinceReferenceDate="510695759.46743798">
                                             <!--2017-03-08 19:55:59 +0000-->
                                         </date>
@@ -191,7 +189,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="bottom" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fy5-Yo-oSa">
-                                <rect key="frame" x="295" y="613" width="68" height="30"/>
+                                <rect key="frame" x="295" y="569" width="68" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="Btu-h5-Pxs"/>
                                 </constraints>

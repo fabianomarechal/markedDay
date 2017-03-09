@@ -15,6 +15,7 @@
 		3FA640D51E71D95D007A43CF /* Atividade.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FA640D31E71D95D007A43CF /* Atividade.xcdatamodeld */; };
 		3FA640D81E71DA5D007A43CF /* Atividade+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA640D61E71DA5D007A43CF /* Atividade+CoreDataClass.swift */; };
 		3FA640D91E71DA5D007A43CF /* Atividade+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA640D71E71DA5D007A43CF /* Atividade+CoreDataProperties.swift */; };
+		3FA640DE1E71E858007A43CF /* atividadeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA640DD1E71E858007A43CF /* atividadeTextView.swift */; };
 		8FF80C101E6ED69B00D9249C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF80C0F1E6ED69B00D9249C /* AppDelegate.swift */; };
 		8FF80C151E6ED69B00D9249C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FF80C131E6ED69B00D9249C /* Main.storyboard */; };
 		8FF80C171E6ED69B00D9249C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FF80C161E6ED69B00D9249C /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		3FA640D41E71D95D007A43CF /* Atividade.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Atividade.xcdatamodel; sourceTree = "<group>"; };
 		3FA640D61E71DA5D007A43CF /* Atividade+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Atividade+CoreDataClass.swift"; path = "../Atividade+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3FA640D71E71DA5D007A43CF /* Atividade+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Atividade+CoreDataProperties.swift"; path = "../Atividade+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3FA640DD1E71E858007A43CF /* atividadeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = atividadeTextView.swift; sourceTree = "<group>"; };
 		8FF80C0C1E6ED69B00D9249C /* MarkedDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarkedDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF80C0F1E6ED69B00D9249C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FF80C141E6ED69B00D9249C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				3F5AD3991E709855001CE3A6 /* formularioViewController.swift */,
 				3F8404651E6F48C3008312D1 /* atividadeCollectionViewCell.swift */,
 				3F8404631E6F3C27008312D1 /* AtividadesCollectionViewController.swift */,
+				3FA640DD1E71E858007A43CF /* atividadeTextView.swift */,
 				8FF80C161E6ED69B00D9249C /* Assets.xcassets */,
 			);
 			path = MarkedDay;
@@ -194,6 +197,7 @@
 				3F5AD39A1E709855001CE3A6 /* formularioViewController.swift in Sources */,
 				3F8404641E6F3C27008312D1 /* AtividadesCollectionViewController.swift in Sources */,
 				3F8404661E6F48C3008312D1 /* atividadeCollectionViewCell.swift in Sources */,
+				3FA640DE1E71E858007A43CF /* atividadeTextView.swift in Sources */,
 				3FA640D01E71D865007A43CF /* CoreDataManager.swift in Sources */,
 				8FF80C101E6ED69B00D9249C /* AppDelegate.swift in Sources */,
 				3FA640D91E71DA5D007A43CF /* Atividade+CoreDataProperties.swift in Sources */,
