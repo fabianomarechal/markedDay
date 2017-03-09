@@ -15,8 +15,20 @@ class formularioViewController: UIViewController {
     @IBOutlet weak var inicioDatePicker: UIDatePicker!
     @IBOutlet weak var terminoDatePicker: UIDatePicker!
     
+    var atividade: Atividade?
+    
     @IBAction func cadastraAtividade(_ sender: UIButton) {
         print("titulo=\(titulo), descrição=\(descricao)")
+        
+        atividade = Atividade()
+        atividade?.titulo = titulo
+        atividade?.descricao = descricao
+        atividade?.inicio = inicio as NSDate?
+        atividade?.termino = termino as NSDate?
+        
+        if AtividadeDAO.insert() {
+            print("Atividade Salva com sucesso")
+        }
         
         navigationController?.popViewController(animated: true)
     }

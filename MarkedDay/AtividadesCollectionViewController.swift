@@ -13,12 +13,8 @@ private let reuseIdentifier = "atividadeCell"
 
 class AtividadesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    let atividades = [
-        (descricao: "estudar algebra", inicio: "20:00", termino: "21:00"),
-        (descricao: "Matematica", inicio: "15:00", termino: "16:00"),
-        (descricao: "Matematica", inicio: "15:00", termino: "16:00"),
-        (descricao: "Algoritmo", inicio: "21:00", termino: "22:00")
-    ]
+    var atividade: Atividade?
+    var atividades: [Atividade]? = AtividadeDAO.searchAll()
     
     var novaAtividade: (descricao: String, inicio: Date, termino: Date)?
     
@@ -121,12 +117,12 @@ extension AtividadesCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return atividades.count
+        return atividades!.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        let atividade = atividades[indexPath.row]
+        let atividade = atividades![indexPath.row]
         // Configure the cell
         if let atividadeCell = cell as? atividadeCollectionViewCell{
             atividadeCell.descricaoTextView.text = atividade.descricao

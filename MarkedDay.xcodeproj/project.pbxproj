@@ -10,6 +10,11 @@
 		3F5AD39A1E709855001CE3A6 /* formularioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5AD3991E709855001CE3A6 /* formularioViewController.swift */; };
 		3F8404641E6F3C27008312D1 /* AtividadesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8404631E6F3C27008312D1 /* AtividadesCollectionViewController.swift */; };
 		3F8404661E6F48C3008312D1 /* atividadeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8404651E6F48C3008312D1 /* atividadeCollectionViewCell.swift */; };
+		3FA640D01E71D865007A43CF /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA640CF1E71D865007A43CF /* CoreDataManager.swift */; };
+		3FA640D21E71D897007A43CF /* AtividadeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA640D11E71D897007A43CF /* AtividadeDAO.swift */; };
+		3FA640D51E71D95D007A43CF /* Atividade.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FA640D31E71D95D007A43CF /* Atividade.xcdatamodeld */; };
+		3FA640D81E71DA5D007A43CF /* Atividade+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA640D61E71DA5D007A43CF /* Atividade+CoreDataClass.swift */; };
+		3FA640D91E71DA5D007A43CF /* Atividade+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA640D71E71DA5D007A43CF /* Atividade+CoreDataProperties.swift */; };
 		8FF80C101E6ED69B00D9249C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF80C0F1E6ED69B00D9249C /* AppDelegate.swift */; };
 		8FF80C151E6ED69B00D9249C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FF80C131E6ED69B00D9249C /* Main.storyboard */; };
 		8FF80C171E6ED69B00D9249C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FF80C161E6ED69B00D9249C /* Assets.xcassets */; };
@@ -20,6 +25,11 @@
 		3F5AD3991E709855001CE3A6 /* formularioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = formularioViewController.swift; sourceTree = "<group>"; };
 		3F8404631E6F3C27008312D1 /* AtividadesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtividadesCollectionViewController.swift; sourceTree = "<group>"; };
 		3F8404651E6F48C3008312D1 /* atividadeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = atividadeCollectionViewCell.swift; sourceTree = "<group>"; };
+		3FA640CF1E71D865007A43CF /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		3FA640D11E71D897007A43CF /* AtividadeDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtividadeDAO.swift; sourceTree = "<group>"; };
+		3FA640D41E71D95D007A43CF /* Atividade.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Atividade.xcdatamodel; sourceTree = "<group>"; };
+		3FA640D61E71DA5D007A43CF /* Atividade+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Atividade+CoreDataClass.swift"; path = "../Atividade+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3FA640D71E71DA5D007A43CF /* Atividade+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Atividade+CoreDataProperties.swift"; path = "../Atividade+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8FF80C0C1E6ED69B00D9249C /* MarkedDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarkedDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF80C0F1E6ED69B00D9249C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FF80C141E6ED69B00D9249C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,6 +49,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FA640DA1E71DBB8007A43CF /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				3FA640D61E71DA5D007A43CF /* Atividade+CoreDataClass.swift */,
+				3FA640D71E71DA5D007A43CF /* Atividade+CoreDataProperties.swift */,
+			);
+			name = VO;
+			sourceTree = "<group>";
+		};
+		3FA640DB1E71DBC5007A43CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3FA640D31E71D95D007A43CF /* Atividade.xcdatamodeld */,
+				3FA640CF1E71D865007A43CF /* CoreDataManager.swift */,
+				3FA640DC1E71DBEF007A43CF /* DAO */,
+				3FA640DA1E71DBB8007A43CF /* VO */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3FA640DC1E71DBEF007A43CF /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				3FA640D11E71D897007A43CF /* AtividadeDAO.swift */,
+			);
+			name = DAO;
+			sourceTree = "<group>";
+		};
 		8FF80C031E6ED69A00D9249C = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +96,7 @@
 		8FF80C0E1E6ED69B00D9249C /* MarkedDay */ = {
 			isa = PBXGroup;
 			children = (
+				3FA640DB1E71DBC5007A43CF /* Model */,
 				8FF80C211E6ED6C100D9249C /* Supporting Files */,
 				8FF80C131E6ED69B00D9249C /* Main.storyboard */,
 				3F5AD3991E709855001CE3A6 /* formularioViewController.swift */,
@@ -150,10 +189,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FA640D51E71D95D007A43CF /* Atividade.xcdatamodeld in Sources */,
+				3FA640D21E71D897007A43CF /* AtividadeDAO.swift in Sources */,
 				3F5AD39A1E709855001CE3A6 /* formularioViewController.swift in Sources */,
 				3F8404641E6F3C27008312D1 /* AtividadesCollectionViewController.swift in Sources */,
 				3F8404661E6F48C3008312D1 /* atividadeCollectionViewCell.swift in Sources */,
+				3FA640D01E71D865007A43CF /* CoreDataManager.swift in Sources */,
 				8FF80C101E6ED69B00D9249C /* AppDelegate.swift in Sources */,
+				3FA640D91E71DA5D007A43CF /* Atividade+CoreDataProperties.swift in Sources */,
+				3FA640D81E71DA5D007A43CF /* Atividade+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +362,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3FA640D31E71D95D007A43CF /* Atividade.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3FA640D41E71D95D007A43CF /* Atividade.xcdatamodel */,
+			);
+			currentVersion = 3FA640D41E71D95D007A43CF /* Atividade.xcdatamodel */;
+			path = Atividade.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8FF80C041E6ED69A00D9249C /* Project object */;
 }
