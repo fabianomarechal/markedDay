@@ -52,7 +52,30 @@ class AtividadesCollectionViewController: UICollectionViewController, UICollecti
 
         // Do any additional setup after loading the view.
     }
+    
+    func excluir(sender: descricaoGesture){
+        self.atividade = sender.atividade
+        print("\(atividade?.titulo)")
+        confirmarExclusao()
+    }
 
+    func chamarFormularioView(sender : descricaoGesture){
+        self.atividade = sender.atividade
+        self.performSegue(withIdentifier: "atividadesIdentifier", sender: self)
+    }
+    
+    func apagarDoBanco(alert: UIAlertAction){
+        AtividadeDAO.delete(atividade: atividade!)
+        self.collectionView!.reloadData()
+        self.collectionView?.deleteSections()
+    }
+    
+    func confirmarExclusao() {
+        let alert: UIAlertController = UIAlertController(title: "Confirmar exclusão", message: "Confirma a exclusão?", preferredStyle: UIAlertControllerStyle.alert)
+        let action = UIAlertAction(title: "Excluir", style: UIAlertActionStyle.default, handler: apagarDoBanco)
+       alert.addAction(action)
+       self.present(alert, animated: true, completion: nil)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         atividades = AtividadeDAO.searchAll()
@@ -66,15 +89,20 @@ class AtividadesCollectionViewController: UICollectionViewController, UICollecti
         // Dispose of any resources that can be recreated.
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
+        if segue.identifier == "atividadesIdentifier" {
+            if let novaView = segue.destination as? formularioViewController {
+                novaView.atividade = self.atividade
+            }
+        }
         // Pass the selected object to the new view controller.
     }
-    */
+ 
 
 
     // MARK: UICollectionViewDelegate
@@ -128,20 +156,33 @@ extension AtividadesCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         let atividade = atividades![indexPath.row]
-        let tap = UITapGestureRecognizer(target: self, action: #selector(AtividadesCollectionViewController.chamarFormularioView))
+        
+        let tap = descricaoGesture(target: self, action: #selector(AtividadesCollectionViewController.chamarFormularioView))
+        let longPress = longPressGesture(target: self, action: #selector(AtividadesCollectionViewController.excluir))
+        
+        cell.addGestureRecognizer(longPress)
         // Configure the cell
         if let atividadeCell = cell as? atividadeCollectionViewCell{
             atividadeCell.descricaoTextView.text = atividade.descricao
+            tap.atividade = atividade
+            longPress.atividade = atividade
+            
             atividadeCell.descricaoTextView.addGestureRecognizer(tap)
+            atividadeCell.descricaoTextView.addGestureRecognizer(longPress)
         }
      
         return cell
     }
     
-    func chamarFormularioView(){
-        self.performSegue(withIdentifier: "atividadesIdentifier", sender: self)
-    }
     
+}
+
+class descricaoGesture : UITapGestureRecognizer {
+    var atividade: Atividade?
+}
+
+class longPressGesture: UILongPressGestureRecognizer {
+    var atividade: Atividade?
 }
 
 extension AtividadesCollectionViewController {

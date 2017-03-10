@@ -16,18 +16,27 @@ class formularioViewController: UIViewController {
     @IBOutlet weak var terminoDatePicker: UIDatePicker!
     
     var atividade: Atividade?
+    var atualizar: Bool = false
     
     @IBAction func cadastraAtividade(_ sender: UIButton) {
         print("titulo=\(titulo), descrição=\(descricao)")
         
-        atividade = Atividade()
-        atividade?.titulo = titulo
-        atividade?.descricao = descricao
-        atividade?.inicio = inicio as NSDate?
-        atividade?.termino = termino as NSDate?
+        if atualizar{
+            atividade?.setValue(titulo, forKey: "titulo")
+            atividade?.setValue(descricao, forKey: "descricao")
+            atividade?.setValue(inicio, forKey: "inicio")
+            atividade?.setValue(termino, forKey: "termino")
+            
+        } else {
+            atividade = Atividade()
+            atividade?.titulo = titulo
+            atividade?.descricao = descricao
+            atividade?.inicio = inicio as NSDate?
+            atividade?.termino = termino as NSDate?
         
-        if AtividadeDAO.insert() {
-            print("Atividade Salva com sucesso")
+            if AtividadeDAO.insert() {
+                print("Atividade Salva com sucesso")
+            }
         }
         
         navigationController?.popViewController(animated: true)
@@ -73,14 +82,16 @@ class formularioViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if self.atividade != nil {
+            titulo = (atividade?.titulo!)!
+            descricao = (atividade?.descricao!)!
+            inicio = atividade?.inicio! as! Date
+            termino = atividade?.termino! as! Date
+            self.atualizar = true
+        }
         // Do any additional setup after loading the view.
     }
     
-    
-    // Atualiza a view
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

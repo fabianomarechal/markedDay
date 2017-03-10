@@ -25,6 +25,19 @@ class AtividadeDAO {
         return result
     }
     
+    static func update() -> Bool {
+        var result = false
+        
+        do {
+            try CoreDataManager.getContext().updatedObjects
+            result = true
+        } catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+        
+        return result
+    }
+    
     static func delete(atividade: Atividade) -> Bool {
         var result = false
         
