@@ -128,12 +128,18 @@ extension AtividadesCollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         let atividade = atividades![indexPath.row]
+        let tap = UITapGestureRecognizer(target: self, action: #selector(AtividadesCollectionViewController.chamarFormularioView))
         // Configure the cell
         if let atividadeCell = cell as? atividadeCollectionViewCell{
             atividadeCell.descricaoTextView.text = atividade.descricao
+            atividadeCell.descricaoTextView.addGestureRecognizer(tap)
         }
      
         return cell
+    }
+    
+    func chamarFormularioView(){
+        self.performSegue(withIdentifier: "atividadesIdentifier", sender: self)
     }
     
 }
