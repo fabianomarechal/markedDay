@@ -66,8 +66,8 @@ class AtividadesCollectionViewController: UICollectionViewController, UICollecti
     
     func apagarDoBanco(alert: UIAlertAction){
         AtividadeDAO.delete(atividade: atividade!)
+        atividades = AtividadeDAO.searchAll()
         self.collectionView!.reloadData()
-        self.collectionView?.deleteSections()
     }
     
     func confirmarExclusao() {
@@ -163,7 +163,7 @@ extension AtividadesCollectionViewController {
         cell.addGestureRecognizer(longPress)
         // Configure the cell
         if let atividadeCell = cell as? atividadeCollectionViewCell{
-            atividadeCell.descricaoTextView.text = atividade.descricao
+            atividadeCell.descricaoTextView.text = atividade.titulo
             tap.atividade = atividade
             longPress.atividade = atividade
             
